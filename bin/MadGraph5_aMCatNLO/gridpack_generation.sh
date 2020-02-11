@@ -119,6 +119,10 @@ make_gridpack () {
       cd $MGBASEDIRORIG
       cat $PRODHOME/patches/*.patch | patch -p1
       cp -r $PRODHOME/PLUGIN/CMS_CLUSTER/ PLUGIN/ 
+      echo '#####################'
+      echo 'copying user_filter.py from ' $CARDSDIR ' to PLUGINS'
+      cp $CARDSDIR/user_filter.py PLUGIN/
+      echo '#####################'
       # Intended for expert use only!
       if ls $CARDSDIR/${name}*.patch; then
         echo "    WARNING: Applying custom user patch. I hope you know what you're doing!"
